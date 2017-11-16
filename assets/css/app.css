@@ -74,12 +74,12 @@ body {
  * Movie card
  *
  */
-.card {
+.movie-card, .search-result-card {
 	cursor:pointer;
 	transition-duration:0.4s;
 	margin-bottom:10px;
 }
-.card:hover {
+.movie-card:hover, .search-result-card:hover {
 	opacity:0.7;
 }
 .movie-card-title {
@@ -101,10 +101,63 @@ body {
 
 /*
  *
+ * Search results
+ *
+ */
+.search-results-movie-title {
+    font-size:2em;
+    display:inline-block;
+}
+.search-results-movie-rating-btn {
+    -webkit-appearance:none;
+    border:0;
+    float:right;
+}
+.search-results-movie-rating {
+    font-size:2em;
+    padding:10px;
+    width:80px;
+}
+
+/*
+ *
  * Movie details
  *
  */
-.movie-details-genre-button {
+.movie-details-title {
+    font-size:3em;
+    display:inline-block;
+}
+.movie-details-rating-btn {
+    color:#ffffff;
+    float:right;
+}
+.movie-details-rating-btn, .movie-details-genre-button {
 	-webkit-appearance:none;
 	border:0;
+}
+.movie-details-rating {
+    color:#ffffff;
+    font-size:2em;
+    padding:10px;
+}
+.movie-details-cast-header {
+    font-size:1.5em;
+}
+.movie-details-cast-image {
+    width:100%;
+}
+.movie-details-cast-real-name {
+    font-weight:bold;
+}
+.movie-details-cast-character-name {
+    font-weight:lighter;
+    min-height:48px;
+}
+
+.movie-details-studio-header {
+    font-size:2em;
+}
+.movie-details-trailers-header {
+    font-size:1.5em;
 }

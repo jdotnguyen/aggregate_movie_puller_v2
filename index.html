@@ -65,7 +65,7 @@
     <script id="movie-card-template" type="text/template">
       <!-- Begin grid column -->
       <div class="column col-2 col-xl-6">
-        <div class="card">
+        <div class="card movie-card">
           <div class="card-image">
             <img class="movie-poster">
           </div>
@@ -94,23 +94,21 @@
     <!-- Begin search results list item template -->
     <script id="search-results-template" type="text/template">
       <div class="column col-6 col-xs-12 search-results-list-item">
-        <div class="card">
+        <div class="card search-result-card">
           <div class="card-body">
             <div class="columns">
-              <div class="column col-2">
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored movie-rating-btn">
-                  <h4 class="movie-rating"></h4>
+              <div class="column col-2 col-xl-12">
+                <img class="search-results-movie-poster movie-poster">
+              </div>
+              <div class="column col-10 col-xl-12">
+                <div class="search-results-movie-title"></div>
+                <button class="search-results-movie-rating-btn">
+                  <span class="label label-primary search-results-movie-rating"></span>
                 </button>
-              </div>
-              <div class="column col-1">
-                <img class="movie-poster">
-              </div>
-              <div class="column col-9">
-                <h5 class="movie-title"></h5>
                 <br>
-                <b class="movie-release-date"></b>
+                <b class="search-results-movie-release-date"></b>
                 <br><br>
-                <div class="movie-summary"></div>
+                <div class="search-results-movie-summary"></div>
               </div>
             </div>
           </div>
@@ -132,21 +130,27 @@
         <div class="card movie-details-card">
           <div class="card-body">
             <div class="movie-details-title"></div>&nbsp;&nbsp;(<span class="movie-details-release-date"></span>)
-            <br>
-            <button class="mdl-button mdl-js-button mdl-button--raised movie-details-rating-btn">
-              <span class="movie-details-rating"></span>
+            <button type="button" class="movie-details-rating-btn">
+              <span class="label movie-details-rating"></span>
             </button>
-            <br><br>
+            <br><br><br>
             <div class="movie-details-overview"></div>
             <br>
             <div class="movie-details-genres"></div>
+            <br>
+            <div class="movie-details-cast"><br><div class="movie-details-cast-header">Cast</div><div class="movie-details-cast-body columns"></div></div>
+            <br>
+            <div class="movie-details-trailers"><div class="movie-details-trailers-header">Videos</div><div class="movie-details-trailers-body columns"></div></div>
           </div>
         </div>
       </div>
       <div class="column col-3 col-xl-12">
         <div class="card movie-details-card">
           <div class="card-body">
-            <div class="movie-details-studio-header">Studio Information</div>
+            <div class="movie-details-studio-header">Information</div>
+            <br>
+            <b>Runtime:</b><div class="movie-details-studio-runtime"></div>
+            <br>
             <b>Budget: </b><div class="movie-details-studio-budget"></div>
             <br>
             <b>Production companies: </b><div class="movie-details-studio-companies"></div>
@@ -167,5 +171,29 @@
       </button>
     </script>
     <!-- End movie details genre template -->
+
+    <!-- Begin movie details cast template -->
+    <script id="movie-details-cast-template" type="text/template">
+      <div class="column col-2">
+        <div class="card">
+          <div class="card-image">
+            <img class="movie-details-cast-image">
+          </div>
+          <div class="card-body">
+            <div class="movie-details-cast-real-name"></div>
+            <div class="movie-details-cast-character-name"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- End movie details cast template -->
+
+    <!-- Begin movie details video template -->
+    <script id="movie-details-video-template" type="text/template">
+      <div class="column col-6">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/INUvFbLkZNU" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </script>
+    <!-- End movie details video template -->
   </body>
 </html>
