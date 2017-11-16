@@ -1,0 +1,110 @@
+/*
+ *
+ * Main elements
+ * 
+ */
+body {
+	background-color:#e8e8e8;
+}
+.navbar {
+    padding: 22px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #f8f9fa;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 300px;
+    height: 80px;
+    z-index: 10;
+}
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+}
+.sidebar-brand {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 13px 27.5px;
+}
+.sidebar-navigation-link {
+    display: block;
+    padding: 27.5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.sidebar-navigation-link:hover, .sidebar-navigation-link.active {
+	background-color:#e8e8e8;
+	text-decoration:none;
+}
+
+/*
+ *
+ * Content
+ *
+ */
+.content-body {
+	margin-left:300px;
+	margin-top:80px;
+	padding:10px;
+    -ms-flex: 0 1 auto;
+    position: relative;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*
+ *
+ * Movie card
+ *
+ */
+.card {
+	cursor:pointer;
+	transition-duration:0.4s;
+	margin-bottom:10px;
+}
+.card:hover {
+	opacity:0.7;
+}
+.movie-card-title {
+	min-height:90px;
+}
+.movie-summary {
+	overflow: hidden;
+   	text-overflow: ellipsis;
+   	display: -webkit-box;
+   	-webkit-box-orient: vertical;
+   	-webkit-line-clamp: 3;
+    line-height: 1.5em;
+    max-height: 5.8em;
+}
+
+.movie-poster {
+	width:100%;
+}
+
+/*
+ *
+ * Movie details
+ *
+ */
+.movie-details-genre-button {
+	-webkit-appearance:none;
+	border:0;
+}

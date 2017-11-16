@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Aggregate Movie Puller</title>
+
+    <!-- Spectre CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- Custom Font Import -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+
+    <!-- Custom Page CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+    <!-- Custom Page JS -->
+    <script src="assets/js/App.js"></script>
+    <script src="assets/js/CardManager.js"></script>
+    <script src="assets/js/MovieDetailsManager.js"></script>
+    <script src="assets/js/SearchManager.js"></script>
+    <script src="assets/js/SidebarManager.js"></script>
+  </head>
+  <body>
+    <!-- Top header -->
+    <header class="navbar">
+      <section class="navbar-section">
+        <a href="#" class="navbar-brand mr-2 header-title">Spectre.css</a>
+      </section>
+      <section class="navbar-section">
+        <div class="input-group input-inline">
+          <input class="form-input" id="search" type="text" placeholder="search">
+          <button class="btn btn-primary input-group-btn" id="searchbtn">Search</button>
+        </div>
+      </section>
+    </header>
+
+    <!-- Begin Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-brand">AMP</div>
+      <nav>
+        <a class="sidebar-navigation-link" href="#" name="#now_playing">Now Playing</a>
+        <a class="sidebar-navigation-link" href="#" name="#popular">Popular</a>
+        <a class="sidebar-navigation-link" href="#" name="#top_rated">Top Rated</a>
+        <a class="sidebar-navigation-link" href="#" name="#upcoming">Upcoming</a>
+      </nav>
+    </div>
+    <!-- End Sidebar -->
+
+    <!-- Content area -->
+    <div class="content-body"><div class="columns" id="content-grid"></div></div>
+    <!-- End content area -->
+
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <!-- Template Section -->
+    <!-- Begin Movie card template -->
+    <script id="movie-card-template" type="text/template">
+      <!-- Begin grid column -->
+      <div class="column col-2 col-xl-6">
+        <div class="card">
+          <div class="card-image">
+            <img class="movie-poster">
+          </div>
+          <div class="card-header">
+            <button class="btn btn-primary float-right movie-rating"></button>
+            <div class="card-title h5 movie-card-title"></div>
+            <div class="card-subtitle text-grey movie-release-date"></div>
+          </div>
+          <div class="card-body movie-summary"></div>
+        </div>
+      </div>
+      <!-- End grid column -->
+    </script>
+    <!-- End Movie card template -->
+
+    <!-- Begin search parent template -->
+    <script id="search-parent-template" type="text/template">
+      <div class="column col-12">
+        <h3>Search results for <b><i>"<span class="search-results-keyword"></span>"</i></b></h3>
+        <div class="search-results-list">
+        </div>
+      </div>
+    </script>
+    <!-- End search parent template -->
+
+    <!-- Begin search results list item template -->
+    <script id="search-results-template" type="text/template">
+      <div class="column col-6 col-xs-12 search-results-list-item">
+        <div class="card">
+          <div class="card-body">
+            <div class="columns">
+              <div class="column col-2">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored movie-rating-btn">
+                  <h4 class="movie-rating"></h4>
+                </button>
+              </div>
+              <div class="column col-1">
+                <img class="movie-poster">
+              </div>
+              <div class="column col-9">
+                <h5 class="movie-title"></h5>
+                <br>
+                <b class="movie-release-date"></b>
+                <br><br>
+                <div class="movie-summary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- End search results list item template -->
+
+    <!-- Begin movie details template -->
+    <script id="movie-details-template" type="text/template">
+      <div class="column col-2 col-xl-6 col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <img class="movie-poster movie-details-poster">
+          </div>
+        </div>
+      </div>
+      <div class="column col-7 col-xl-6 col-lg-12">
+        <div class="card movie-details-card">
+          <div class="card-body">
+            <div class="movie-details-title"></div>&nbsp;&nbsp;(<span class="movie-details-release-date"></span>)
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised movie-details-rating-btn">
+              <span class="movie-details-rating"></span>
+            </button>
+            <br><br>
+            <div class="movie-details-overview"></div>
+            <br>
+            <div class="movie-details-genres"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column col-3 col-xl-12">
+        <div class="card movie-details-card">
+          <div class="card-body">
+            <div class="movie-details-studio-header">Studio Information</div>
+            <b>Budget: </b><div class="movie-details-studio-budget"></div>
+            <br>
+            <b>Production companies: </b><div class="movie-details-studio-companies"></div>
+            <br>
+            <b>Production countries: </b><div class="movie-details-studio-countries"></div>
+            <br>
+            <b>Languages: </b><div class="movie-details-studio-languages"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- End movie details template -->
+
+    <!-- Begin movie details genre template -->
+    <script id="movie-details-genre-template" type="text/template">
+      <button type="button" class="movie-details-genre-button">
+          <span class="label label-primary label-rounded movie-details-genre-chip">Button Chip</span>
+      </button>
+    </script>
+    <!-- End movie details genre template -->
+  </body>
+</html>
