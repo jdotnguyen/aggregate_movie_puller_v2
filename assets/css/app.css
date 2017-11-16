@@ -5,6 +5,7 @@
  */
 body {
 	background-color:#e8e8e8;
+    font-family: 'Roboto';
 }
 .navbar {
     padding: 22px;
@@ -74,6 +75,9 @@ body {
  * Movie card
  *
  */
+.movie-card {
+    padding-bottom:20px;
+}
 .movie-card, .search-result-card {
 	cursor:pointer;
 	transition-duration:0.4s;
@@ -92,7 +96,7 @@ body {
    	-webkit-box-orient: vertical;
    	-webkit-line-clamp: 3;
     line-height: 1.5em;
-    max-height: 5.8em;
+    max-height: 5.7em;
 }
 
 .movie-poster {

@@ -58,13 +58,18 @@ function SearchManager () {
 		            var clone = $(template).clone();
 		            var mid = this.id;
 
+		            //Populate search data
 		            $(clone).find('.search-results-movie-poster').attr('src', 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/' + this.poster_path);
 		            $(clone).find('.search-results-movie-title').html(this.title);
 		            $(clone).find('.search-results-movie-release-date').html(this.release_date);
 		            $(clone).find('.search-results-movie-summary').html(this.overview);
 		            $(clone).find('.search-results-movie-rating').html(this.vote_average);
 		            $(clone).find('.search-results-list-item-title').html(this.original_title);
+
+		            //Append to main body
 		            $('#content-grid').append(clone).fadeIn();
+
+		            //Add a click handler to each of the result templates
 		            $(clone).click(function() {
 		            	movie_details_manager.movieDetailHandler(mid);
 		            });

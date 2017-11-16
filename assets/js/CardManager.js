@@ -36,6 +36,7 @@ function CardManager () {
 	          		//Shove HTML data onto content area
 	          		$('#content-grid').append(clone).fadeIn();
 
+	          		//Add click handler to each of these templates
 	          		$(clone).click(function() {
 	            		movie_details_manager.movieDetailHandler(mid);
 	          		});

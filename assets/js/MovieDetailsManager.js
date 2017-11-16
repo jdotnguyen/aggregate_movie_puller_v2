@@ -88,10 +88,12 @@ function MovieDetailsManager () {
 			          		var movie_details_cast_template = $('#movie-details-cast-template').html();
 			          		var movie_details_cast_template_clone = $(movie_details_cast_template).clone();
 
+			          		//Populate data
 			          		$(movie_details_cast_template_clone).find('.movie-details-cast-image').attr('src', 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/' + this.profile_path);
 			          		$(movie_details_cast_template_clone).find('.movie-details-cast-real-name').html(this.name);
 			          		$(movie_details_cast_template_clone).find('.movie-details-cast-character-name').html(this.character);
 
+			          		//Append to main body
 			          		$(movie_details_template_clone).find('.movie-details-cast-body').append(movie_details_cast_template_clone);
 
 			          		if (i == 5) {
@@ -119,8 +121,10 @@ function MovieDetailsManager () {
 			          		var movie_details_video_template = $('#movie-details-video-template').html();
 			          		var movie_details_video_template_clone = $(movie_details_video_template).clone();
 
+			          		//Change the embed URL in each YouTube iframe
 			          		$(movie_details_video_template_clone).find('iframe').attr('src', 'https://www.youtube.com/embed/' + this.key);
 
+			          		//Append to main body
 			          		$(movie_details_template_clone).find('.movie-details-trailers-body').append(movie_details_video_template_clone);
 			          	});
 		        	},
