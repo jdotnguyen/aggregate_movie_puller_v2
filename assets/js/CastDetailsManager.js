@@ -7,10 +7,10 @@ function CastDetailsManager () {
 	  	window.location.href = "#cast_details=" + cid;
 	};
 
-	//Populate Now Playing
+	//Populate Cast Details
 	this.castDetailsAjax = function (type) {
 		//Style header
-  		$('.header-title').html($('.sidebar-navigation-link.active').html());
+  		$('.header-title').html("Cast Details");
 
 	  	//Find out what type of call we're making
 	  	var ajaxUrl = "https://api.themoviedb.org/3/person/" + type + "?api_key=7daac836cb57a577537d2d5ba0313dc8&language=en-US&page=1";
