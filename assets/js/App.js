@@ -54,6 +54,12 @@ function initView(splitUrl, urlCase) {
 
         search_manager.searchAjax(keywords);
         break;
+      case "cast_details":
+        //Grab the cast ID fro ajax call
+        var cast_id = urlArgs;
+
+        cast_details_manager.castDetailsAjax(cast_id);
+        break;
     }
   }
 };

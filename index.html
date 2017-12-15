@@ -27,17 +27,18 @@
     <script src="assets/js/MovieDetailsManager.js"></script>
     <script src="assets/js/SearchManager.js"></script>
     <script src="assets/js/SidebarManager.js"></script>
+    <script src="assets/js/CastDetailsManager.js"></script>
   </head>
   <body>
     <!-- Begin top header -->
     <header class="navbar">
       <section class="navbar-section">
-        <a href="#" class="navbar-brand mr-2 header-title">Spectre.css</a>
+        <a href="#" class="navbar-brand mr-2 header-title"></a>
       </section>
       <section class="navbar-section">
         <div class="input-group input-inline">
-          <input class="form-input" id="search" type="text" placeholder="search">
-          <button class="btn btn-primary input-group-btn" id="searchbtn">Search</button>
+          <input class="form-input" id="search" type="text" placeholder="Search">
+          <button class="btn btn-primary input-group-btn" id="searchbtn"><i class="icon icon-search"></i></button>
         </div>
       </section>
     </header>
@@ -45,7 +46,7 @@
 
     <!-- Begin Sidebar -->
     <div class="sidebar">
-      <div class="sidebar-brand">AMP</div>
+      <div class="sidebar-brand interactable">AMP</div>
       <nav>
         <a class="sidebar-navigation-link" href="#" name="#now_playing">Now Playing</a>
         <a class="sidebar-navigation-link" href="#" name="#popular">Popular</a>
@@ -64,8 +65,8 @@
     <script id="movie-card-template" type="text/template">
       <!-- Begin grid column -->
       <div class="column col-2 col-xl-6">
-        <div class="card movie-card">
-          <div class="card-image">
+        <div class="card movie-card interactable">
+          <div class="card-body">
             <img class="movie-poster">
           </div>
           <div class="card-header">
@@ -93,7 +94,7 @@
     <!-- Begin search results list item template -->
     <script id="search-results-template" type="text/template">
       <div class="column col-6 col-xs-12 search-results-list-item">
-        <div class="card search-result-card">
+        <div class="card search-result-card interactable">
           <div class="card-body">
             <div class="columns">
               <div class="column col-2 col-xl-12">
@@ -159,6 +160,14 @@
             <b>Languages: </b><div class="movie-details-studio-languages"></div>
           </div>
         </div>
+        <div class="card movie-details-card movie-details-similar-movies-card">
+          <div class="card-body">
+            <div class="movie-details-similar-movies-header">Similar Movies</div>
+            <br>
+            <div class="movie-details-similar-movies-list columns">
+            </div>
+          </div>
+        </div>
       </div>
     </script>
     <!-- End movie details template -->
@@ -173,7 +182,7 @@
 
     <!-- Begin movie details cast template -->
     <script id="movie-details-cast-template" type="text/template">
-      <div class="column col-2">
+      <div class="column col-2 movie-details-cast-card interactable">
         <div class="card">
           <div class="card-image">
             <img class="movie-details-cast-image">
@@ -194,5 +203,50 @@
       </div>
     </script>
     <!-- End movie details video template -->
+
+    <!-- Begin movie details similar movies template -->
+    <script id="movie-details-similar-movies-template" type="text/template">
+      <div class="column col-3 interactable">
+        <img class="movie-poster">
+        <div class="movie-details-similar-movie-title"></div>
+      </div>
+    </script>
+    <!-- End movie details similar movies template -->
+
+    <!-- Begin cast details template -->
+    <script id="cast-details-template" type="text/template">
+      <div class="column col-2 col-xl-6 col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <img class="cast-poster cast-details-poster">
+          </div>
+        </div>
+      </div>
+      <div class="column col-7 col-xl-6 col-lg-12">
+        <div class="card cast-details-card">
+          <div class="card-body">
+            <div class="cast-details-title"></div>
+            <br><br><br>
+            <div class="cast-details-biography"></div>
+            <br>
+            <div class="cast-details-birthday"></div>
+            <br>
+            <div class="cast-details-birthplace"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column col-3 col-xl-12">
+        <div class="card cast-details-card">
+          <div class="card-body">
+            <div class="cast-details-studio-header">Trivia</div>
+            <br>
+            <b>Sex:</b><div class="cast-details-sex"></div>
+            <br>
+            <b>Aliases:</b><div class="cast-details-aliases"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- End cast details template -->
   </body>
 </html>

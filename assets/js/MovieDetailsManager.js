@@ -87,6 +87,7 @@ function MovieDetailsManager () {
 			          	$.each(cast, function (i, v) {
 			          		var movie_details_cast_template = $('#movie-details-cast-template').html();
 			          		var movie_details_cast_template_clone = $(movie_details_cast_template).clone();
+			          		var cid = this.id;
 
 			          		//Populate data
 			          		$(movie_details_cast_template_clone).find('.movie-details-cast-image').attr('src', 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/' + this.profile_path);
@@ -96,6 +97,12 @@ function MovieDetailsManager () {
 			          		//Append to main body
 			          		$(movie_details_template_clone).find('.movie-details-cast-body').append(movie_details_cast_template_clone);
 
+			          		//Add click handler for each cast member
+			          		$(movie_details_cast_template_clone).click(function () {
+			          			cast_details_manager.castDetailHandler(cid);
+			          		});
+
+			          		//Only show top 6
 			          		if (i == 5) {
 			          			return false;
 			          		}
@@ -126,6 +133,45 @@ function MovieDetailsManager () {
 
 			          		//Append to main body
 			          		$(movie_details_template_clone).find('.movie-details-trailers-body').append(movie_details_video_template_clone);
+			          	});
+		        	},
+		        	error: function(err) {
+		            	alert(JSON.stringify(err));
+		        	}
+		      	});
+
+		      	//Get similar movies ajax
+		      	$.ajax({
+		      		url: "https://api.themoviedb.org/3/movie/" + mid + "/similar?api_key=7daac836cb57a577537d2d5ba0313dc8&language=en-US",
+		        	contentType: "application/json",
+		        	type: "GET",
+		        	crossDomain: true,
+		        	success: function(data) {
+			          	//Get each similar movie
+			          	var results = data.results;
+
+			          	//Pop in each similar movie entry
+			          	$.each(results, function (i, v) {
+			          		var movie_details_similar_movies_template = $('#movie-details-similar-movies-template').html();
+			          		var movie_details_similar_movies_template_clone = $(movie_details_similar_movies_template).clone();
+			          		var mid = this.id;
+
+			          		//Populate movie poster and title into template
+			          		$(movie_details_similar_movies_template_clone).find('.movie-poster').attr('src', 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/' + this.poster_path);
+			          		$(movie_details_similar_movies_template_clone).find('.movie-details-similar-movie-title').html(this.title);
+
+			          		//Append to main body
+			          		$(movie_details_template_clone).find('.movie-details-similar-movies-list').append(movie_details_similar_movies_template_clone);
+
+			          		//Click handler for each of similar movie
+			          		$(movie_details_similar_movies_template_clone).click(function () {
+			          			movie_details_manager.movieDetailHandler(mid);
+			          		});
+
+			          		//Only show top 8
+			          		if (i == 7) {
+			          			return false;
+			          		}
 			          	});
 		        	},
 		        	error: function(err) {

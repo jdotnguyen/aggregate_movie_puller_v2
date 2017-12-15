@@ -3,6 +3,13 @@ function SidebarManager () {
 
 	//Sidebar handlers
 	this.initSidebarHandlers = function () {
+		//Logo
+		$('.sidebar-brand').click(function(e) {
+			//Go back home
+			window.location.href = '#now_playing';
+		});
+
+		//Sidebar navigation buttons
 	  	$('.sidebar-navigation-link').click(function(e) {
 	  		e.preventDefault();
 	  		//Styling
