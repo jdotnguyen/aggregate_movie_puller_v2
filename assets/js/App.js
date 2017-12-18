@@ -5,7 +5,7 @@ $(document).ready(function() {
   sidebar_manager.initSidebarHandlers();
   
   //On URL change, get listeners up
-  window.addEventListener("hashchange", function () {
+  window.addEventListener("popstate", function () {
     startApp();
   });
 });
