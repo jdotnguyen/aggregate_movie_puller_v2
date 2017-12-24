@@ -64,7 +64,7 @@ body {
 .content-body {
 	margin-left:300px;
 	margin-top:80px;
-	padding:10px;
+	padding:15px;
     -ms-flex: 0 1 auto;
     position: relative;
     display: inline-block;
@@ -83,6 +83,7 @@ body {
  *
  */
 .movie-card {
+    margin-bottom:15px;
     padding-bottom:20px;
 }
 .movie-card-title {
@@ -107,7 +108,7 @@ body {
  *
  */
 .search-result-card {
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 .search-results-movie-title {
     font-size:1.1em;
@@ -139,7 +140,7 @@ body {
  *
  */
 .genre-result-card {
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 .genre-results-movie-title {
     font-size:1.1em;
@@ -170,6 +171,10 @@ body {
  * Movie details
  *
  */
+.movie-details-information-card {
+    margin-top:15px;
+}
+
 .movie-details-title {
     font-size:3em;
     display:inline-block;
@@ -200,16 +205,15 @@ body {
     font-weight:lighter;
     min-height:48px;
 }
+.movie-details-trailers-card {
+    margin-top:15px;
+}
+.movie-details-trailers-header {
+    font-size:2em;
+}
 
 .movie-details-studio-header {
     font-size:2em;
-}
-.movie-details-trailers-header {
-    font-size:1.5em;
-}
-
-.movie-details-similar-movies-card {
-    margin-top:10px;
 }
 .movie-details-similar-movies-header {
     font-size:2em;
@@ -220,6 +224,10 @@ body {
  * Cast details
  *
  */
+.cast-details-card {
+    margin-top:15px;
+}
+
 .cast-details-title {
     font-size:3em;
     display:inline-block;
