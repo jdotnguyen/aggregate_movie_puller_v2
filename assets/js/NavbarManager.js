@@ -1,19 +1,19 @@
-function SidebarManager () {
+function NavbarManager () {
 	var _this = this;
 
 	//Sidebar handlers
-	this.initSidebarHandlers = function () {
+	this.initNavbarHandlers = function () {
 		//Logo
-		$('.sidebar-brand').click(function(e) {
+		$('.top-brand').click(function(e) {
 			//Go back home
 			window.location.href = '#now_playing';
 		});
 
 		//Sidebar navigation buttons
-	  	$('.sidebar-navigation-link').click(function(e) {
+	  	$('.navigation-link').click(function(e) {
 	  		e.preventDefault();
 	  		//Styling
-	  		$('.sidebar-navigation-link').removeClass('active');
+	  		$('.navigation-link').removeClass('active');
 	  		$(this).addClass('active');
 
 	  		//Redirect for SPA
@@ -22,4 +22,4 @@ function SidebarManager () {
 	};
 }
 
-var sidebar_manager = new SidebarManager();
+var navbar_manager = new NavbarManager();

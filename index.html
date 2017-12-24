@@ -23,41 +23,37 @@
     <script src="assets/js/CardManager.js"></script>
     <script src="assets/js/MovieDetailsManager.js"></script>
     <script src="assets/js/SearchManager.js"></script>
-    <script src="assets/js/SidebarManager.js"></script>
+    <script src="assets/js/NavbarManager.js"></script>
     <script src="assets/js/CastDetailsManager.js"></script>
     <script src="assets/js/GenreManager.js"></script>
     <script src="assets/js/CompanyManager.js"></script>
   </head>
   <body>
-    <!-- Begin top header -->
-    <header class="navbar">
-      <section class="navbar-section">
-        <a href="#" class="navbar-brand mr-2 header-title"></a>
-      </section>
-      <section class="navbar-section">
-        <div class="input-group input-inline">
-          <input class="form-input" id="search" type="text" placeholder="Search">
-          <button class="btn btn-primary input-group-btn" id="searchbtn"><i class="icon icon-search"></i></button>
-        </div>
-      </section>
-    </header>
-    <!-- End top header -->
+    <div class="container grid-xl">
+      <!-- Begin top header -->
+      <header class="navbar">
+        <section class="navbar-section">
+          <a href="#" class="btn btn-link navigation-link interactable" name="#now_playing">Now Playing</a>
+          <a href="#" class="btn btn-link navigation-link interactable" name="#popular">Popular</a>
+          <a href="#" class="btn btn-link navigation-link interactable" name="#top_rated">Top Rated</a>
+          <a href="#" class="btn btn-link navigation-link interactable" name="#upcoming">Upcoming</a>
+        </section>
+        <section class="navbar-center">
+          <div class="top-brand interactable">AMP</div>
+        </section>
+        <section class="navbar-section">
+          <div class="input-group input-inline">
+            <input class="form-input" id="search" type="text" placeholder="Search">
+            <button class="btn btn-primary input-group-btn" id="searchbtn"><i class="icon icon-search"></i></button>
+          </div>
+        </section>
+      </header>
+      <!-- End top header -->
 
-    <!-- Begin Sidebar -->
-    <div class="sidebar">
-      <div class="sidebar-brand interactable">AMP</div>
-      <nav>
-        <a class="sidebar-navigation-link interactable" href="#" name="#now_playing">Now Playing</a>
-        <a class="sidebar-navigation-link interactable" href="#" name="#popular">Popular</a>
-        <a class="sidebar-navigation-link interactable" href="#" name="#top_rated">Top Rated</a>
-        <a class="sidebar-navigation-link interactable" href="#" name="#upcoming">Upcoming</a>
-      </nav>
+      <!-- Content area -->
+      <div class="content-body"><div class="columns" id="content-grid"></div></div>
+      <!-- End content area -->
     </div>
-    <!-- End Sidebar -->
-
-    <!-- Content area -->
-    <div class="content-body"><div class="columns" id="content-grid"></div></div>
-    <!-- End content area -->
 
     <!-- Template Section -->
     <!-- Begin Movie card template -->

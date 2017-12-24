@@ -2,7 +2,7 @@
 $(document).ready(function() {
   startApp();
   search_manager.initSearchHandler();
-  sidebar_manager.initSidebarHandlers();
+  navbar_manager.initNavbarHandlers();
   
   //On URL change, get listeners up
   window.addEventListener("popstate", function () {
@@ -37,9 +37,9 @@ function initView(splitUrl, urlCase) {
       case "popular":
       case "top_rated":
       case "upcoming":
-        //Sidebar styling
-        $('.sidebar-navigation-link').removeClass('active');
-        $('.sidebar-navigation-link[name="#' + urlCaseArg + '"]').addClass('active');
+        //Navbar styling
+        $('.navigation-link').removeClass('active');
+        $('.navigation-link[name="#' + urlCaseArg + '"]').addClass('active');
         card_manager.getAjax(urlCaseArg);
         break;
       case "movie_details":
