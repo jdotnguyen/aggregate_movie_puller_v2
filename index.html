@@ -18,9 +18,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-    <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-
     <!-- Custom Page JS -->
     <script src="assets/js/App.js"></script>
     <script src="assets/js/CardManager.js"></script>
@@ -64,7 +61,7 @@
     <!-- Begin Movie card template -->
     <script id="movie-card-template" type="text/template">
       <!-- Begin grid column -->
-      <div class="column col-2 col-xl-6">
+      <div class="column col-3">
         <div class="card movie-card interactable">
           <div class="card-body">
             <img class="movie-poster">
@@ -119,14 +116,14 @@
 
     <!-- Begin movie details template -->
     <script id="movie-details-template" type="text/template">
-      <div class="column col-2 col-xl-6 col-lg-12">
+      <div class="column col-3">
         <div class="card">
           <div class="card-body">
             <img class="movie-poster movie-details-poster">
           </div>
         </div>
       </div>
-      <div class="column col-7 col-xl-6 col-lg-12">
+      <div class="column col-5">
         <div class="card movie-details-card">
           <div class="card-body">
             <div class="movie-details-title"></div>&nbsp;&nbsp;(<span class="movie-details-release-date"></span>)
@@ -144,7 +141,7 @@
           </div>
         </div>
       </div>
-      <div class="column col-3 col-xl-12">
+      <div class="column col-4">
         <div class="card movie-details-card">
           <div class="card-body">
             <div class="movie-details-studio-header">Information</div>
@@ -182,7 +179,7 @@
 
     <!-- Begin movie details cast template -->
     <script id="movie-details-cast-template" type="text/template">
-      <div class="column col-2 movie-details-cast-card interactable">
+      <div class="column col-4 movie-details-cast-card interactable">
         <div class="card">
           <div class="card-image">
             <img class="movie-details-cast-image">
@@ -198,7 +195,7 @@
 
     <!-- Begin movie details video template -->
     <script id="movie-details-video-template" type="text/template">
-      <div class="column col-6">
+      <div class="column col-12">
         <iframe width="100%" height="315" src="https://www.youtube.com/embed/INUvFbLkZNU" frameborder="0" allowfullscreen></iframe>
       </div>
     </script>
@@ -206,7 +203,7 @@
 
     <!-- Begin movie details similar movies template -->
     <script id="movie-details-similar-movies-template" type="text/template">
-      <div class="column col-3 interactable">
+      <div class="column col-6 interactable">
         <img class="movie-poster">
         <div class="movie-details-similar-movie-title"></div>
       </div>
@@ -215,14 +212,14 @@
 
     <!-- Begin cast details template -->
     <script id="cast-details-template" type="text/template">
-      <div class="column col-2 col-xl-6 col-lg-12">
+      <div class="column col-3">
         <div class="card">
           <div class="card-body">
             <img class="cast-poster cast-details-poster">
           </div>
         </div>
       </div>
-      <div class="column col-7 col-xl-6 col-lg-12">
+      <div class="column col-5">
         <div class="card cast-details-card">
           <div class="card-body">
             <div class="cast-details-title"></div>
@@ -235,7 +232,7 @@
           </div>
         </div>
       </div>
-      <div class="column col-3 col-xl-12">
+      <div class="column col-4">
         <div class="card cast-details-card">
           <div class="card-body">
             <div class="cast-details-studio-header">Trivia</div>

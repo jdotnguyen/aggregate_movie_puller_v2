@@ -4,18 +4,16 @@ function SearchManager () {
 	//Initial Search function
 	this.initSearchHandler = function () {
 	  	//Search input and button handlers
-	  	$('#search').keyup(function (e) {_this.runSearch(e)});
+	  	$('#search').keyup(function (e) { if (e.keyCode == 13) {_this.runSearch()}});
 		$('#searchbtn').click(function () {_this.runSearch()});
   	};
 
-  	this.runSearch = function (e) {
+  	this.runSearch = function () {
   		//Get search input value
 	    var keywords = $('#search').val();
 
-	    //Only search when user presses enter
-	    if (e.keyCode == 13) {
-	    	window.location.href = "#search_query=" + keywords;
-	    }
+	    //Run search
+    	window.location.href = "#search_query=" + keywords;
   	}
 
   	this.searchAjax = function (keywords) {
