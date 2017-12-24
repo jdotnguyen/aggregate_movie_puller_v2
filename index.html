@@ -25,6 +25,7 @@
     <script src="assets/js/SearchManager.js"></script>
     <script src="assets/js/SidebarManager.js"></script>
     <script src="assets/js/CastDetailsManager.js"></script>
+    <script src="assets/js/GenreManager.js"></script>
   </head>
   <body>
     <!-- Begin top header -->
@@ -45,10 +46,10 @@
     <div class="sidebar">
       <div class="sidebar-brand interactable">AMP</div>
       <nav>
-        <a class="sidebar-navigation-link" href="#" name="#now_playing">Now Playing</a>
-        <a class="sidebar-navigation-link" href="#" name="#popular">Popular</a>
-        <a class="sidebar-navigation-link" href="#" name="#top_rated">Top Rated</a>
-        <a class="sidebar-navigation-link" href="#" name="#upcoming">Upcoming</a>
+        <a class="sidebar-navigation-link interactable" href="#" name="#now_playing">Now Playing</a>
+        <a class="sidebar-navigation-link interactable" href="#" name="#popular">Popular</a>
+        <a class="sidebar-navigation-link interactable" href="#" name="#top_rated">Top Rated</a>
+        <a class="sidebar-navigation-link interactable" href="#" name="#upcoming">Upcoming</a>
       </nav>
     </div>
     <!-- End Sidebar -->
@@ -114,6 +115,42 @@
     </script>
     <!-- End search results list item template -->
 
+    <!-- Begin genre parent template -->
+    <script id="genre-parent-template" type="text/template">
+      <div class="column col-12">
+        <h3>genre results for <b><i>"<span class="genre-results-keyword"></span>"</i></b></h3>
+        <div class="genre-results-list">
+        </div>
+      </div>
+    </script>
+    <!-- End genre parent template -->
+
+    <!-- Begin genre results list item template -->
+    <script id="genre-results-template" type="text/template">
+      <div class="column col-6 col-xs-12 genre-results-list-item">
+        <div class="card genre-result-card interactable">
+          <div class="card-body">
+            <div class="columns">
+              <div class="column col-2 col-xl-12">
+                <img class="genre-results-movie-poster movie-poster">
+              </div>
+              <div class="column col-10 col-xl-12">
+                <div class="genre-results-movie-title"></div>
+                <button class="genre-results-movie-rating-btn">
+                  <span class="label label-primary genre-results-movie-rating"></span>
+                </button>
+                <br>
+                <b class="genre-results-movie-release-date"></b>
+                <br><br>
+                <div class="genre-results-movie-summary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- End genre results list item template -->
+
     <!-- Begin movie details template -->
     <script id="movie-details-template" type="text/template">
       <div class="column col-3">
@@ -172,7 +209,7 @@
     <!-- Begin movie details genre template -->
     <script id="movie-details-genre-template" type="text/template">
       <button type="button" class="movie-details-genre-button">
-          <span class="label label-primary label-rounded movie-details-genre-chip">Button Chip</span>
+          <span class="label label-primary label-rounded movie-details-genre-chip interactable">Button Chip</span>
       </button>
     </script>
     <!-- End movie details genre template -->

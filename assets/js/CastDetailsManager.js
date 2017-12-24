@@ -56,7 +56,7 @@ function CastDetailsManager () {
           		});
 
           		//Shove HTML data onto content area
-          		$('#content-grid').append(clone).fadeIn();
+          		$('#content-grid').append(clone).fadeIn('fast');
 
           		//Add click handler to each of these templates
           		$(clone).click(function() {

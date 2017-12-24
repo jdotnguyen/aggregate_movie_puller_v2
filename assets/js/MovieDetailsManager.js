@@ -45,9 +45,15 @@ function MovieDetailsManager () {
 		      	$.each(data.genres, function () {
 		        	var movie_details_genre_template = $('#movie-details-genre-template').html();
 		        	var movie_details_genre_template_clone = $(movie_details_genre_template).clone();
+		        	var gid = this.id;
 
-		        	$(movie_details_genre_template_clone).find('.movie-details-genre-chip').html(this.name);
+		        	$(movie_details_genre_template_clone).find('.movie-details-genre-chip').html(this.name).attr('id', this.id);
 		        	$(movie_details_template_clone).find('.movie-details-genres').append(movie_details_genre_template_clone);
+
+		        	//Add click handler for each genre
+		        	$(movie_details_genre_template_clone).click(function () {
+		        		genre_manager.genreHandler(gid);
+		        	});
 		      	});
 
 		      	//Studio Info
@@ -66,7 +72,7 @@ function MovieDetailsManager () {
 		        	$(movie_details_template_clone).find('.movie-details-studio-languages').append(this.name + '<br>');
 		      	});
 
-		      	$('#content-grid').html(movie_details_template_clone).fadeIn();
+		      	$('#content-grid').html(movie_details_template_clone).fadeIn('fast');
 
 		      	//Get cast ajax
 		      	$.ajax({

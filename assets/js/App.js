@@ -60,6 +60,12 @@ function initView(splitUrl, urlCase) {
 
         cast_details_manager.castDetailsAjax(cast_id);
         break;
+      case "genre_details":
+        //Grab the genre id
+        var genre_id = urlArgs;
+
+        genre_manager.genreAjax(genre_id);
+        break;
     }
   }
 };

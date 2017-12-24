@@ -65,7 +65,7 @@ function SearchManager () {
 		            $(clone).find('.search-results-list-item-title').html(this.original_title);
 
 		            //Append to main body
-		            $('#content-grid').append(clone).fadeIn();
+		            $('#content-grid').append(clone).fadeIn('fast');
 
 		            //Add a click handler to each of the result templates
 		            $(clone).click(function() {
