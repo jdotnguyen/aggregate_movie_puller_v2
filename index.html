@@ -26,6 +26,7 @@
     <script src="assets/js/SidebarManager.js"></script>
     <script src="assets/js/CastDetailsManager.js"></script>
     <script src="assets/js/GenreManager.js"></script>
+    <script src="assets/js/CompanyManager.js"></script>
   </head>
   <body>
     <!-- Begin top header -->
@@ -118,7 +119,7 @@
     <!-- Begin genre parent template -->
     <script id="genre-parent-template" type="text/template">
       <div class="column col-12">
-        <h3>genre results for <b><i>"<span class="genre-results-keyword"></span>"</i></b></h3>
+        <h3>Genre results for <b><i>"<span class="genre-results-keyword"></span>"</i></b></h3>
         <div class="genre-results-list">
         </div>
       </div>
@@ -150,6 +151,42 @@
       </div>
     </script>
     <!-- End genre results list item template -->
+
+    <!-- Begin company parent template -->
+    <script id="company-parent-template" type="text/template">
+      <div class="column col-12">
+        <h3>Company results for <b><i>"<span class="company-results-keyword"></span>"</i></b></h3>
+        <div class="company-results-list">
+        </div>
+      </div>
+    </script>
+    <!-- End company parent template -->
+
+    <!-- Begin company results list item template -->
+    <script id="company-results-template" type="text/template">
+      <div class="column col-6 col-xs-12 company-results-list-item">
+        <div class="card company-result-card interactable">
+          <div class="card-body">
+            <div class="columns">
+              <div class="column col-2 col-xl-12">
+                <img class="company-results-movie-poster movie-poster">
+              </div>
+              <div class="column col-10 col-xl-12">
+                <div class="company-results-movie-title"></div>
+                <button class="company-results-movie-rating-btn">
+                  <span class="label label-primary company-results-movie-rating"></span>
+                </button>
+                <br>
+                <b class="company-results-movie-release-date"></b>
+                <br><br>
+                <div class="company-results-movie-summary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- End company results list item template -->
 
     <!-- Begin movie details template -->
     <script id="movie-details-template" type="text/template">
@@ -186,8 +223,15 @@
             <div class="movie-details-overview"></div>
             <br>
             <div class="movie-details-genres"></div>
-            <br>
-            <div class="movie-details-cast"><br><div class="movie-details-cast-header">Cast</div><div class="movie-details-cast-body columns"></div></div>
+          </div>
+        </div>
+        <div class="card movie-details-cast-section-card">
+          <div class="card-body">
+            <div class="movie-details-cast">
+              <div class="movie-details-cast-header">Cast</div>
+              <br>
+              <div class="movie-details-cast-body columns"></div>
+            </div>
           </div>
         </div>
         <div class="card movie-details-card movie-details-trailers-card">
@@ -221,6 +265,14 @@
     </script>
     <!-- End movie details genre template -->
 
+    <!-- Begin movie details company template -->
+    <script id="movie-details-company-template" type="text/template">
+      <button type="button" class="movie-details-company-button">
+          <span class="label label-primary label-rounded movie-details-company-chip interactable">Button Chip</span>
+      </button>
+    </script>
+    <!-- End movie details company template -->
+
     <!-- Begin movie details cast template -->
     <script id="movie-details-cast-template" type="text/template">
       <div class="column col-4 movie-details-cast-card interactable">
@@ -247,7 +299,7 @@
 
     <!-- Begin movie details similar movies template -->
     <script id="movie-details-similar-movies-template" type="text/template">
-      <div class="column col-6 interactable">
+      <div class="column col-6 movie-details-similar-movies-list-card interactable">
         <img class="movie-poster">
         <div class="movie-details-similar-movie-title"></div>
       </div>
@@ -300,7 +352,7 @@
 
     <!-- Begin cast details known for template -->
     <script id="cast-details-known-for-template" type="text/template">
-      <div class="column col-6 interactable">
+      <div class="column col-6 cast-details-known-for-list-card interactable">
         <img class="movie-poster">
         <div class="cast-details-known-for-movie-title"></div>
       </div>

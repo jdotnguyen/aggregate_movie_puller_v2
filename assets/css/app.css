@@ -168,6 +168,38 @@ body {
 
 /*
  *
+ * Company results
+ *
+ */
+.company-result-card {
+    margin-bottom:15px;
+}
+.company-results-movie-title {
+    font-size:1.1em;
+    display:inline-block;
+}
+.company-results-movie-rating-btn {
+    -webkit-appearance:none;
+    border:0;
+    float:right;
+}
+.company-results-movie-rating {
+    font-size:2em;
+    padding:10px;
+    width:80px;
+}
+.company-results-movie-summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-height: 1.5em;
+    max-height: 2.8em;
+}
+
+/*
+ *
  * Movie details
  *
  */
@@ -183,17 +215,25 @@ body {
     color:#ffffff;
     float:right;
 }
-.movie-details-rating-btn, .movie-details-genre-button {
+.movie-details-rating-btn, .movie-details-genre-button, .movie-details-company-button {
 	-webkit-appearance:none;
 	border:0;
+    padding-left:0;
 }
 .movie-details-rating {
     color:#ffffff;
     font-size:2em;
     padding:10px;
 }
+
+.movie-details-cast-section-card {
+    margin-top:15px;
+}
+.movie-details-cast-card {
+    margin-top:15px;
+}
 .movie-details-cast-header {
-    font-size:1.5em;
+    font-size:2em;
 }
 .movie-details-cast-image {
     width:100%;
@@ -205,6 +245,7 @@ body {
     font-weight:lighter;
     min-height:48px;
 }
+
 .movie-details-trailers-card {
     margin-top:15px;
 }
@@ -214,6 +255,9 @@ body {
 
 .movie-details-studio-header {
     font-size:2em;
+}
+.movie-details-similar-movies-list-card {
+    margin-top:15px;
 }
 .movie-details-similar-movies-header {
     font-size:2em;
@@ -234,4 +278,8 @@ body {
 }
 .cast-details-studio-header {
     font-size:2em;
+}
+
+.cast-details-known-for-list-card {
+    margin-top:15px;
 }

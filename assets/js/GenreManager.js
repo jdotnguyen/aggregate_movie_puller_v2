@@ -2,7 +2,7 @@ function GenreManager () {
 	var _this = this;
 
 	//Genre handler
-	this.genreHandler = function (gid, genre) {
+	this.genreHandler = function (gid) {
 	  	//Set URL param
 	  	window.location.href = "#genre_details=" + gid;
   	};

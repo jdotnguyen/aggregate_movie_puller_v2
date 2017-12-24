@@ -66,6 +66,12 @@ function initView(splitUrl, urlCase) {
 
         genre_manager.genreAjax(genre_id);
         break;
+      case "company_details":
+        //Grab the company id
+        var company_id = urlArgs;
+
+        company_manager.companyAjax(company_id);
+        break;
     }
   }
 };

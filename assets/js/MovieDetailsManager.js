@@ -47,7 +47,7 @@ function MovieDetailsManager () {
 		        	var movie_details_genre_template_clone = $(movie_details_genre_template).clone();
 		        	var gid = this.id;
 
-		        	$(movie_details_genre_template_clone).find('.movie-details-genre-chip').html(this.name).attr('id', this.id);
+		        	$(movie_details_genre_template_clone).find('.movie-details-genre-chip').html(this.name).attr('id', gid);
 		        	$(movie_details_template_clone).find('.movie-details-genres').append(movie_details_genre_template_clone);
 
 		        	//Add click handler for each genre
@@ -63,7 +63,17 @@ function MovieDetailsManager () {
 		      	$(movie_details_template_clone).find('.movie-details-studio-runtime').html(hours + 'h ' + minutes + 'm');
 		      	$(movie_details_template_clone).find('.movie-details-studio-budget').html('$' + data.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 		      	$.each(data.production_companies, function () {
-		        	$(movie_details_template_clone).find('.movie-details-studio-companies').append(this.name + '<br>');
+		      		var movie_details_company_template = $('#movie-details-company-template').html();
+		      		var movie_details_company_template_clone = $(movie_details_company_template).clone();
+		      		var cid = this.id;
+
+		      		$(movie_details_company_template_clone).find('.movie-details-company-chip').html(this.name).attr('id', cid);
+		        	$(movie_details_template_clone).find('.movie-details-studio-companies').append(movie_details_company_template_clone);
+
+		        	//Add click handler for each genre
+		        	$(movie_details_company_template_clone).click(function () {
+		        		company_manager.companyHandler(cid);
+		        	});
 		      	});
 		      	$.each(data.production_countries, function () {
 		        	$(movie_details_template_clone).find('.movie-details-studio-countries').append(this.name + '<br>');
