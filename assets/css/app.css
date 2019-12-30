@@ -15,7 +15,7 @@ body {
     opacity:0.6;
 }
 .navbar {
-    padding: 22px;
+    padding: 0 22px;
     margin-bottom: 10px;
     border-bottom: 1px solid #e8e8e8;
     background-color: #f8f9fa;
